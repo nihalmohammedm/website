@@ -491,11 +491,11 @@ a:hover {
     height: auto;
   }
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 48px;
+    line-height: 43px;
   }
   #hero h2 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 24px;
   }
 }
