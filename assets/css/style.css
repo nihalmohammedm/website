@@ -606,6 +606,21 @@ a:hover {
   color: #fa2742;
 }
 
+
+#subhero .logo a {
+  color: #7b1616;
+}
+
+#subhero .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  #subhero .logo {
+    font-size: 28px;
+  }
+}
 @media (min-width: 1024px) {
   #subhero {
     background-attachment: fixed;
