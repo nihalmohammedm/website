@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>4O4</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google fonts link-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&family=Josefin+Sans&family=Lato:wght@300&family=Lora&family=Playfair+Display:wght@500&family=Heebo:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- CSS-->
+<style>
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: 'lato', sans-serif;
+  color: #373833;
+}
+
+a {
+  color: #fa2742;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #C32042;
+  text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #fa2742;
+  width: 40px;
+  height: 40px;
+  border-radius: 60px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #f81634;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #fa2742;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  background: #fff;
+  z-index: 997;
+  padding: 15px 0;
+  border-bottom: 1px solid #fbe6e6;
+}
+
+#header.header-scrolled {
+  border-color: #fff;
+  box-shadow: 0px 2px 15px rgba(101, 18, 18, 0.08);
+}
+
+#header .logo {
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-family:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#header .logo a {
+  color: #7b1616;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+@media (max-width: 992px) {
+  #header .logo {
+    font-size: 28px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #373833;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover, .navbar .active, .navbar li:hover > a {
+  color: #fa2742;
+}
+
+.navbar .getstarted {
+  background: #fa2742;
+  padding: 8px 20px;
+  margin-left: 30px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.navbar .getstarted:hover {
+  color: #ffffff;
+  background: #f81634;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fa2742;
+  box-shadow: 0px 0px 30px rgba(161, 127, 127, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  text-transform: none;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+  color: #fa2742;
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #373833;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fa2742;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(58, 10, 10, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #373833;
+}
+
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: #fa2742;
+}
+
+.navbar-mobile .getstarted {
+  margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(161, 127, 127, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+  color: #fa2742;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url("../img/hero-bgno.jpg") top center; 
+  background-size: cover;
+  position: relative;
+}
+
+#hero:before {
+  content: "";
+  background: #fcfcfc;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  padding-top: 150px;
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #373833;
+  font-family: 'Playfair display', sans-serif;}
+
+#hero h2 {
+  color: #5e5e5e;
+  margin: 10px 0 0 0;
+  font-size: 22px;
+}
+
+#hero .btn-get-started {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 14px 50px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #fa2742;
+}
+
+#hero .btn-get-started:hover {
+  background: #f81634;
+}
+
+#hero .icon-boxes {
+  margin-top: 100px;
+}
+
+#hero .icon-box {
+  padding: 50px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+#hero .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#hero .icon-box .title a {
+  color: #373833;
+  transition: 0.3s;
+}
+
+#hero .icon-box .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+#hero .icon-box .icon {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  font-size: 36px;
+  line-height: 1;
+  color: #fa2742;
+}
+
+#hero .icon-box:hover {
+  transform: scale(1.08);
+}
+
+#hero .icon-box:hover .title a {
+  color: #fa2742;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-height: 800px) {
+  #hero {
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  #hero {
+    height: auto;
+  }
+  #hero h1 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  #hero h2 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+/* sub hero 
+*/
+#subhero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url("../img/subhero-bgno.jpg") top center; 
+  background-size: cover;
+  position: relative;
+}
+
+#subhero:before {
+  content: "";
+  background: #fcfcfc;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#subhero .container {
+  padding-top: 0;
+}
+
+#subhero h1 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #373833;
+  font-family: 'Playfair display', sans-serif;}
+
+#subhero h2 {
+  color: #5e5e5e;
+  margin: 10px 0 0 0;
+  font-size: 22px;
+}
+
+#subhero .btn-get-started {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 14px 50px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #fa2742;
+}
+
+#subhero .btn-get-started:hover {
+  background: #f81634;
+}
+
+#subhero .icon-boxes {
+  margin-top: 10px;
+}
+
+#subhero .icon-box {
+  padding: 50px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+#subhero .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#subhero .icon-box .title a {
+  color: #373833;
+  transition: 0.3s;
+}
+
+#subhero .icon-box .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+#subhero .icon-box .icon {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  font-size: 36px;
+  line-height: 1;
+  color: #fa2742;
+}
+
+#subhero .icon-box:hover {
+  transform: scale(1.08);
+}
+
+#subhero .icon-box:hover .title a {
+  color: #fa2742;
+}
+
+
+#subhero .logo a {
+  color: #7b1616;
+}
+
+#subhero .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  #subhero .logo {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  #subhero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-height: 800px) {
+  #subhero {
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  #subhero {
+    height: auto;
+  }
+  #subhero h1 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  #subhero h2 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+Alert Section
+--------------------------------------------------------------*/
+.alert {
+  padding: 20px;
+  background-color: #fa2742;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: rgb(255, 255, 255);
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #fef8f9;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #373833;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #919191;
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 20px 0;
+  background: #fef8f9;
+  min-height: 40px;
+  margin-top: 72px;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 58px;
+  }
+}
+
+.breadcrumbs h2 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #1a5e90;
+  content: "/";
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs .d-flex {
+    display: block !important;
+  }
+  .breadcrumbs ol {
+    display: block;
+  }
+  .breadcrumbs ol li {
+    display: inline-block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  color: #373833;
+  font-size: 14px;
+  background: #fef8f8;
+  box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+  background: #fff;
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h3 {
+  font-size: 26px;
+  margin: 0 0 10px 0;
+  font-family: 'Lora', serif;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 300;
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: 'Lora', serif;
+  color: #373833;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #373833;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #fa2742;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #777777;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: #fa2742;
+}
+
+#footer .footer-newsletter {
+  font-size: 15px;
+}
+
+#footer .footer-newsletter h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #373833;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 5px;
+  text-align: left;
+  border: 1px solid #cde5f6;
+}
+
+#footer .footer-newsletter form input[type="email"] {
+  border: 0;
+  padding: 4px 8px;
+  width: calc(100% - 100px);
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  bottom: -1px;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 20px 2px 20px;
+  background: #fa2742;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+  background: #f81634;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  font-size: 13px;
+  color: #373833;
+}
+
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #fa2742;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 5px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+  background: #f81634;
+  color: #fff;
+  text-decoration: none;
+}
+</style>
+
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <!-- <h1 class="logo"><a href="index.html">ConnectedDots</a></h1>
+       Uncomment below if you prefer to use an image logo -->
+     <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Logo" class="img-fluid"></a>
+<!-- 
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#about"><strong>Get Started</strong></a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+  
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="80">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h1>Oops ! Page under Construction</h1>
+          <h2>  </h2>
+          <img src="under.png" alt="" width="100%" height="auto"> <br><br><br>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="main.html" class="btn-get-started scrollto">Still Try going Further</a>
+      </div>
+
+       </div>
+    </div>
+  </section>
+
+  <!-- End Hero Section-->
+   
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Connected Dots</h3>
+            <p>
+              Manjeri <br>
+              Malappuram, 676123<br>
+              Kerala, India <br><br>
+              <strong>Phone:</strong>+91 8113 81 4427<br>
+              <strong>Email:</strong>info@connectedots.ga<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="404">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="404">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="graphic-portfolio">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="404">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="404">Logo Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="compiler.html">Online Compiler</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="QRcode.html">QR Code Creating</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Connected Dots</span></strong>. All Rights Reserved
+        </div>
+        <div>
+          Powered by <a href="http://connectedots.ga/">Connected Dots</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://wa.link/w5t63k" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+        <a href="https://www.facebook.com/100955368844742" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com\connectedots_" class="instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+    
+    </div>
+  </footer>
+  
+  <!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short" ></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+
+  <!--  Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
